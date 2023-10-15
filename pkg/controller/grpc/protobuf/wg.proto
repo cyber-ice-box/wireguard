@@ -1,0 +1,36 @@
+syntax = "proto3";
+package wireguard;
+option go_package = "gitlab.com/cyber-ice-box/wireguard/pkg/controller/grpc/protobuf";
+
+service Wireguard {
+
+  rpc AddUser(AddUserRequest) returns (EmptyResponse) {}
+  rpc DeleteUser(DeleteUserRequest) returns (EmptyResponse) {}
+
+  rpc AllowAccess(UserAllowAccessRequest) returns (EmptyResponse) {}
+  rpc DenyAccess(UserDenyAccessRequest) returns (EmptyResponse) {}
+
+}
+
+message EmptyResponse {
+
+}
+
+message AddUserRequest {
+  string name = 1;
+  string ip = 2;
+  string publicKey = 3;
+}
+
+message DeleteUserRequest {
+  string name = 1;
+}
+
+message UserAllowAccessRequest {
+  string name = 1;
+  string destCIDR = 2;
+}
+
+message UserDenyAccessRequest {
+  string name = 1;
+}

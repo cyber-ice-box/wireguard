@@ -1,0 +1,24 @@
+services:
+  sqlc:
+    image: sqlc/sqlc
+    working_dir: /app/internal/delivery/repository/postgres
+    command:
+      - generate
+    volumes:
+      - ./:/app:rw
+  protobufCompiler:
+    image: docker/dev-environments-go:stable-1
+    working_dir: /app/pkg/controller/grpc/protobuf
+    command:
+      - /bin/bash
+      - -c
+      - |
+        apt-get update
+        curl -LO https://github.com/protocolbuffers/protobuf/releases/download/v24.0/protoc-24.0-linux-x86_64.zip
+        unzip protoc-24.0-linux-x86_64.zip -d /home/.local
+        rm protoc-24.0-linux-x86_64.zip
+        go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
+        go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
+        /home/.local/bin/protoc --go_out=. --go_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt=paths=source_relative  *.proto
+    volumes:
+      - ./:/app:rw
