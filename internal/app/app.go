@@ -1,12 +1,12 @@
 package app
 
 import (
+	postgresConfig "github.com/cyber-ice-box/agent/pkg/postgres"
+	"github.com/cyber-ice-box/wireguard/internal/config"
+	"github.com/cyber-ice-box/wireguard/internal/delivery/controller/grpc"
+	"github.com/cyber-ice-box/wireguard/internal/delivery/repository/postgres"
+	"github.com/cyber-ice-box/wireguard/internal/service"
 	"github.com/rs/zerolog/log"
-	postgresConfig "gitlab.com/cyber-ice-box/agent/pkg/postgres"
-	"gitlab.com/cyber-ice-box/wireguard/internal/config"
-	"gitlab.com/cyber-ice-box/wireguard/internal/delivery/controller/grpc"
-	"gitlab.com/cyber-ice-box/wireguard/internal/delivery/repository/postgres"
-	"gitlab.com/cyber-ice-box/wireguard/internal/service"
 	"os/exec"
 
 	"net"

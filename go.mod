@@ -1,4 +1,4 @@
-module gitlab.com/cyber-ice-box/wireguard
+module github.com/cyber-ice-box/wireguard
 
 go 1.21.1
 

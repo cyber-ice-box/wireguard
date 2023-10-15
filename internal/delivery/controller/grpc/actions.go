@@ -2,7 +2,11 @@ package grpc
 
 import (
 	"context"
+<<<<<<< HEAD
+	"github.com/cyber-ice-box/wireguard/pkg/controller/grpc/protobuf"
+=======
 	"gitlab.com/cyber-ice-box/wireguard/pkg/controller/grpc/protobuf"
+>>>>>>> origin/develop
 )
 
 type service interface {

@@ -1,7 +1,7 @@
 package main
 
 import (
-	"gitlab.com/cyber-ice-box/wireguard/internal/app"
+	"github.com/cyber-ice-box/wireguard/internal/app"
 )
 
 func main() {

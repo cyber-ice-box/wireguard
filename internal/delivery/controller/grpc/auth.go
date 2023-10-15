@@ -5,8 +5,8 @@ import (
 	"errors"
 	"fmt"
 
+	"github.com/cyber-ice-box/wireguard/pkg/controller/grpc/client"
 	"github.com/golang-jwt/jwt"
-	"gitlab.com/cyber-ice-box/wireguard/pkg/controller/grpc/client"
 	"google.golang.org/grpc/metadata"
 )
 

@@ -3,9 +3,9 @@ package service
 import (
 	"context"
 	"fmt"
+	"github.com/cyber-ice-box/wireguard/internal/delivery/repository/postgres"
 	"github.com/hashicorp/go-multierror"
 	"github.com/rs/zerolog/log"
-	"gitlab.com/cyber-ice-box/wireguard/internal/delivery/repository/postgres"
 	"path"
 	"sync"
 )
