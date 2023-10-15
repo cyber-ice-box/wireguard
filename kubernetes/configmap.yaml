@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: wireguard-configmap
+  namespace: cybericebox
+data:
+  gprc-authKey: "123"
+  gprc-signKey: "124"
+  vpn-port: "51820"
+  vpn-address: "10.0.0.1"
+  vpn-privateKey: "AHO0WaFd6s/5KAHqbHWtB23hgrnpBKxJTo4eRDdm6Xk="
+  pg-endpoint: "ep-fancy-cake-84011058.eu-central-1.aws.neon.tech"
+  pg-username: "cybericebox-user"
+  pg-password: "7uQeTXspWdZ5"
+  pg-dbName: "cybericebox"

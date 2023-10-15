@@ -1,0 +1,28 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: wireguard-service
+  namespace: cybericebox
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 51820
+      protocol: UDP
+      targetPort: 51820
+    - port: 5454
+      targetPort: 5454
+  selector:
+    app: wireguard
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: wireguard-grpc-service
+  namespace: cybericebox
+spec:
+  ports:
+    - port: 5454
+      protocol: TCP
+      targetPort: 5454
+  selector:
+    app: wireguard
